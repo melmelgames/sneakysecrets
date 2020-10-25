@@ -12,6 +12,10 @@ public class PlayerController : MonoBehaviour
     private ObjectPooler objectPooler;
     private Vector2 movementDir;
     private Vector2 mousePos;
+    private bool isNearComputer;
+    private GameObject computer;
+
+    [SerializeField] private int score;
 
     [SerializeField] private float moveSpeed;
     [SerializeField] private float bulletForce;
@@ -20,6 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         playerRB2D = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
+        score = 0;
         
     }
 
@@ -34,11 +39,31 @@ public class PlayerController : MonoBehaviour
     {
         GetInput();
         Shoot();
+        StealDocuments();
     }
 
     private void FixedUpdate()
     {
         MovePlayer();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // STEAL DOCUMENTS WHEN NEAR A COMPUTER WITH RIGHT MOUSE BUTTON
+        if(collision.gameObject.tag == "computer")
+        {
+            isNearComputer = true;
+            computer = collision.gameObject;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "computer")
+        {
+            isNearComputer = false;
+            computer = null;
+        }
     }
 
     private void GetInput()
@@ -71,4 +96,23 @@ public class PlayerController : MonoBehaviour
             rb2D.AddForce(gunPoint.up * bulletForce, ForceMode2D.Impulse);
         }
     }
+
+    private void StealDocuments()
+    {
+        if (isNearComputer)
+        {
+            if (Input.GetButtonDown("Fire2"))
+            {
+                GameObject documents = computer.GetComponent<Computer>().StealDocuments();
+                AddScore(documents.GetComponent<Document>().GetPoints());
+            }
+        }
+        
+    }
+
+    private void AddScore(int points)
+    {
+        score += points;
+    }
+
 }
