@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 mousePos;
     private bool isNearComputer;
     private GameObject computer;
+    private Destructable destructableScript;
 
     [SerializeField] private int score;
     [SerializeField] private int enemiesKilled;
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         objectPooler = ObjectPooler.instance;
+        destructableScript = gameObject.GetComponent<Destructable>();
     }
 
     // Update is called once per frame
@@ -126,6 +128,21 @@ public class PlayerController : MonoBehaviour
     public void AddEnemyKill()
     {
         enemiesKilled++;
+    }
+
+    public int GetHealth()
+    {
+        return destructableScript.GetHealth();
+    }
+
+    public int GetScore()
+    {
+        return score;
+    }
+
+    public int GetKills()
+    {
+        return enemiesKilled;
     }
 
 }

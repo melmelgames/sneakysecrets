@@ -8,6 +8,7 @@ public class Destructable : MonoBehaviour
 
     private PlayerController playerController;
 
+
     [SerializeField] private int health;
 
     private void Start()
@@ -25,7 +26,15 @@ public class Destructable : MonoBehaviour
             {
                 playerController.AddEnemyKill();
             }
-            Destroy(gameObject);
+            if(gameObject.tag == "Player")
+            {
+                GameManager.GameOverStatic();
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+            
         }
     }
 
@@ -39,5 +48,10 @@ public class Destructable : MonoBehaviour
     private void TakeDamage()
     {
         health--;
+    }
+
+    public int GetHealth()
+    {
+        return health;
     }
 }
