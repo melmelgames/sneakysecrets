@@ -7,6 +7,8 @@ TagManager:
   - bullet
   - wall
   - computer
+  - enemy
+  - waypoint
   layers:
   - Default
   - TransparentFX

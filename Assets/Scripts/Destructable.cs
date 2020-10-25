@@ -6,11 +6,14 @@ public class Destructable : MonoBehaviour
 {
     private ObjectPooler objectPooler;
 
+    private PlayerController playerController;
+
     [SerializeField] private int health;
 
     private void Start()
     {
         objectPooler = ObjectPooler.instance;
+        playerController = PlayerController.instance;
     }
 
     private void Update()
@@ -18,6 +21,10 @@ public class Destructable : MonoBehaviour
         if(health <= 0)
         {
             GameObject destructableExplosion = objectPooler.SpawnFromPool("destructableExplosion", gameObject.transform.position, Quaternion.identity);
+            if(gameObject.tag == "enemy")
+            {
+                playerController.AddEnemyKill();
+            }
             Destroy(gameObject);
         }
     }

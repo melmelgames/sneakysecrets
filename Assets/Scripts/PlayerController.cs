@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     public Camera cam;
     public Transform gunPoint;
 
+    
+
     private Rigidbody2D playerRB2D;
     private Animator playerAnimator;
     private ObjectPooler objectPooler;
@@ -16,15 +18,21 @@ public class PlayerController : MonoBehaviour
     private GameObject computer;
 
     [SerializeField] private int score;
+    [SerializeField] private int enemiesKilled;
 
     [SerializeField] private float moveSpeed;
     [SerializeField] private float bulletForce;
 
+
+    public static PlayerController instance;
+
     private void Awake()
     {
+        instance = this;
         playerRB2D = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         score = 0;
+        enemiesKilled = 0;
         
     }
 
@@ -113,6 +121,11 @@ public class PlayerController : MonoBehaviour
     private void AddScore(int points)
     {
         score += points;
+    }
+
+    public void AddEnemyKill()
+    {
+        enemiesKilled++;
     }
 
 }
