@@ -63742,7 +63742,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 440a4a6bc431d7149903206b2fc638e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restartBtn: {fileID: 0}
+  restartBtn: {fileID: 1101588853}
 --- !u!4 &1975661237 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2521353112455123771, guid: 150fca0808709fa4a91b76e3a0611ceb,

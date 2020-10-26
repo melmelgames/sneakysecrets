@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
         enemiesKilled = 0;
         documentsStolen = 0;
         totalNumberOfEnemies = FindObjectsOfType<EnemyController>().Length;
-        totalNumberOfDocuments = FindObjectsOfType<Document>().Length;
+        totalNumberOfDocuments = FindObjectsOfType<Computer>().Length;
 
     }
 

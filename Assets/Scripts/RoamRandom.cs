@@ -17,6 +17,7 @@ public class RoamRandom : MonoBehaviour
     private bool playerOnSight;
 
     [SerializeField] private Vector2 targetPos;
+    [SerializeField] private Vector2 startPos;
     [SerializeField] private float delta;
     [SerializeField] private bool shootingCoroutineStarted;
 
@@ -27,6 +28,7 @@ public class RoamRandom : MonoBehaviour
         animator = GetComponent<Animator>();
         targetPos = GenerateRandomTargetPosition();
         shootingCoroutineStarted = false;
+        startPos = rb2D.position;
     }
 
     private void Update()
@@ -63,7 +65,7 @@ public class RoamRandom : MonoBehaviour
 
         if (collision.gameObject.tag == "wall")
         {
-            targetPos = new Vector2(0f, 0f);
+            targetPos = startPos;
         }
     }
 

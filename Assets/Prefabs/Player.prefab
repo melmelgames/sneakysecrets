@@ -125,6 +125,9 @@ MonoBehaviour:
   soundVolume: 0.25
   score: 0
   enemiesKilled: 0
+  totalNumberOfEnemies: 0
+  documentsStolen: 0
+  totalNumberOfDocuments: 0
   moveSpeed: 5
   bulletForce: 25
 --- !u!50 &8066795907017011424
@@ -211,7 +214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8066795907081839171}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.282, y: 1.64, z: 0}
+  m_LocalPosition: {x: 0.282, y: 0.971, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8066795907017011426}

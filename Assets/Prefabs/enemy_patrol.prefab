@@ -236,6 +236,7 @@ MonoBehaviour:
   minRoamY: -3
   maxRoamY: 3
   targetPos: {x: 0, y: 0}
+  startPos: {x: 0, y: 0}
   delta: 0.25
   shootingCoroutineStarted: 0
 --- !u!114 &8977435916009888566
@@ -295,7 +296,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8977435916576060687}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.282, y: 1.64, z: 0}
+  m_LocalPosition: {x: 0.282, y: 0.971, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8977435916009888573}

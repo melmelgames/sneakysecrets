@@ -15,18 +15,10 @@ public class TutorialWindow : MonoBehaviour
     {
         if (gameObject.activeSelf && Input.GetKeyDown(KeyCode.Space))
         {
+            GameManager.ResumeGameStatic();
+            GameManager.StartGame();
             Hide();
         }
-    }
-
-    private void OnEnable()
-    {
-        GameManager.instance.PauseGameTutorial();
-    }
-
-    private void OnDisable()
-    {
-        GameManager.instance.ResumeGameTutorial();
     }
 
     private void Show()

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOverWindow : MonoBehaviour
 {
-    private static GameOverWindow instance;
+    public static GameOverWindow instance;
 
     public Button restartBtn;
 
@@ -35,5 +35,10 @@ public class GameOverWindow : MonoBehaviour
     public static void ShowStatic()
     {
         instance.Show();
+    }
+
+    public static void HideStatic()
+    {
+        instance.Hide();
     }
 }

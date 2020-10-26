@@ -20,6 +20,7 @@ public class TitleWindow : MonoBehaviour
         GameManager.ResumeGameStatic();
         GameManager.StartGame();
         TutorialWindow.ShowStatic();
+        Time.timeScale = 0.0f;
         instance.Hide();
     }
 

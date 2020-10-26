@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         playerController = PlayerController.instance;
-        PauseGameTutorial();
     }
 
     private void Update()
@@ -55,11 +54,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0.0f;
     }
 
-    public void PauseGameTutorial()
-    {
-        Time.timeScale = 0.0f;
-    }
-
     private void GameOver()
     {
         Time.timeScale = 0.0f;
@@ -79,11 +73,6 @@ public class GameManager : MonoBehaviour
         gameOver = false;
         isPaused = false;
         PauseWindow.HidePauseWindowStatic();
-    }
-
-    public void ResumeGameTutorial()
-    {
-        Time.timeScale = 1.0f;
     }
 
     public static void ResumeGameStatic()
