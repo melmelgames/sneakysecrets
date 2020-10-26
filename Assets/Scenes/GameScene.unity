@@ -288,7 +288,17 @@ PrefabInstance:
     - target: {fileID: 8699686571599637949, guid: ff93d702fb4fac04687a6c931f9f1963,
         type: 3}
       propertyPath: m_Name
-      value: Tilemap_Room_backEntrance (4)
+      value: Tilemap_Room_backEntrance_guardingTopSneaky
+      objectReference: {fileID: 0}
+    - target: {fileID: 8699686571707102839, guid: ff93d702fb4fac04687a6c931f9f1963,
+        type: 3}
+      propertyPath: m_Name
+      value: enemy_patrol_child_TopSneaky
+      objectReference: {fileID: 0}
+    - target: {fileID: 8699686571707102848, guid: ff93d702fb4fac04687a6c931f9f1963,
+        type: 3}
+      propertyPath: health
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff93d702fb4fac04687a6c931f9f1963, type: 3}

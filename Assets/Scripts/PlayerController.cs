@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private int score;
     [SerializeField] private int enemiesKilled;
+    [SerializeField] private int totalNumberOfEnemies;
 
     [SerializeField] private float moveSpeed;
     [SerializeField] private float bulletForce;
@@ -36,7 +37,8 @@ public class PlayerController : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         score = 0;
         enemiesKilled = 0;
-        
+        totalNumberOfEnemies = FindObjectsOfType<EnemyController>().Length;
+
     }
 
     // Start is called before the first frame update
@@ -52,6 +54,11 @@ public class PlayerController : MonoBehaviour
         GetInput();
         Shoot();
         StealDocuments();
+
+        if(enemiesKilled >= totalNumberOfEnemies)
+        {
+            GameManager.GameOverStatic();
+        }
     }
 
     private void FixedUpdate()
