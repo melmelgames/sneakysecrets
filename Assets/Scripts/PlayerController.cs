@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int score;
     [SerializeField] private int enemiesKilled;
     [SerializeField] private int totalNumberOfEnemies;
+    [SerializeField] private int documentsStolen;
+    [SerializeField] private int totalNumberOfDocuments;
 
     [SerializeField] private float moveSpeed;
     [SerializeField] private float bulletForce;
@@ -37,7 +39,9 @@ public class PlayerController : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         score = 0;
         enemiesKilled = 0;
+        documentsStolen = 0;
         totalNumberOfEnemies = FindObjectsOfType<EnemyController>().Length;
+        totalNumberOfDocuments = FindObjectsOfType<Document>().Length;
 
     }
 
@@ -56,6 +60,11 @@ public class PlayerController : MonoBehaviour
         StealDocuments();
 
         if(enemiesKilled >= totalNumberOfEnemies)
+        {
+            GameManager.GameOverStatic();
+        }
+
+        if(documentsStolen >= totalNumberOfDocuments)
         {
             GameManager.GameOverStatic();
         }
@@ -125,6 +134,7 @@ public class PlayerController : MonoBehaviour
             {
                 GameObject documents = computer.GetComponent<Computer>().StealDocuments();
                 AddScore(documents.GetComponent<Document>().GetPoints());
+                documentsStolen++;
             }
         }
         
