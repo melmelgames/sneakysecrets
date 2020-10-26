@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunPoint: {fileID: 5849615139639939959}
-  shootSound: {fileID: 8300000, guid: 6b1f843205880fc439e26bc5390bf382, type: 3}
+  shootSoundTag: laserShootNoise
   soundVolume: 0.25
   bulletForce: 25
   fireRate: 5

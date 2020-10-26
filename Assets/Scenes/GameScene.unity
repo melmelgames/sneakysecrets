@@ -778,6 +778,10 @@ MonoBehaviour:
     prefab: {fileID: 7040569035501339888, guid: 550f433351e0be54a80d652d74ff769c,
       type: 3}
     size: 50
+  - tag: laserShootNoise
+    prefab: {fileID: 2827685396264531534, guid: f0fa74fb9ce0d5847844fd71b6ae47c7,
+      type: 3}
+    size: 5
 --- !u!4 &245061382
 Transform:
   m_ObjectHideFlags: 0
@@ -64330,31 +64334,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8066795907017011422, guid: 4adaf48fcb003c74bbde96ca9e12b537,
-        type: 3}
-      propertyPath: health
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8066795907017011422, guid: 4adaf48fcb003c74bbde96ca9e12b537,
-        type: 3}
-      propertyPath: explosionSound
-      value: 
-      objectReference: {fileID: 8300000, guid: f05c72464e9d463499a4b9ed2f36aae0, type: 3}
     - target: {fileID: 8066795907017011423, guid: 4adaf48fcb003c74bbde96ca9e12b537,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 8066795907017011423, guid: 4adaf48fcb003c74bbde96ca9e12b537,
-        type: 3}
-      propertyPath: shootSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 6b1f843205880fc439e26bc5390bf382, type: 3}
-    - target: {fileID: 8066795907017011423, guid: 4adaf48fcb003c74bbde96ca9e12b537,
-        type: 3}
-      propertyPath: soundVolume
-      value: 0.25
-      objectReference: {fileID: 0}
     - target: {fileID: 8066795907017011426, guid: 4adaf48fcb003c74bbde96ca9e12b537,
         type: 3}
       propertyPath: m_LocalPosition.x

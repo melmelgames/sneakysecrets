@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public Camera cam;
     public Transform gunPoint;
-    public AudioClip shootSound;
+    public string shootSoundTag;
     public float soundVolume;
 
 
@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             GameObject bullet =  objectPooler.SpawnFromPool("playerBullet", gunPoint.position, gunPoint.rotation);
-            AudioManager.PlaySound(shootSound, soundVolume);
+            AudioManager.PlaySound(shootSoundTag, gameObject.transform.position, soundVolume);
             Rigidbody2D rb2D = bullet.GetComponent<Rigidbody2D>();
             rb2D.AddForce(gunPoint.up * bulletForce, ForceMode2D.Impulse);
         }

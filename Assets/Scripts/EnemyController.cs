@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public Transform gunPoint;
-    public AudioClip shootSound;
+    public string shootSoundTag;
     public float soundVolume;
 
     private ObjectPooler objectPooler;
@@ -22,7 +22,7 @@ public class EnemyController : MonoBehaviour
     {
         while (true)
         {
-            AudioManager.PlaySound(shootSound, soundVolume);
+            AudioManager.PlaySound(shootSoundTag, gameObject.transform.position, soundVolume);
             GameObject enemyBullet = objectPooler.SpawnFromPool("enemyBullet", gunPoint.position, gunPoint.rotation);
             Rigidbody2D rb2D = enemyBullet.GetComponent<Rigidbody2D>();
             rb2D.AddForce(gunPoint.up * bulletForce, ForceMode2D.Impulse);
