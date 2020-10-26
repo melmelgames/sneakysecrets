@@ -26,7 +26,7 @@ public class TutorialWindow : MonoBehaviour
 
     private void OnDisable()
     {
-        GameManager.ResumeGameStatic();
+        GameManager.instance.ResumeGameTutorial();
     }
 
     private void Show()

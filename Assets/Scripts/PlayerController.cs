@@ -6,8 +6,9 @@ public class PlayerController : MonoBehaviour
 {
     public Camera cam;
     public Transform gunPoint;
+    public AudioClip shootSound;
+    public float soundVolume;
 
-    
 
     private Rigidbody2D playerRB2D;
     private Animator playerAnimator;
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        destructableScript = gameObject.GetComponent<Destructable>();
         playerRB2D = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         score = 0;
@@ -41,7 +43,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         objectPooler = ObjectPooler.instance;
-        destructableScript = gameObject.GetComponent<Destructable>();
+        
     }
 
     // Update is called once per frame
@@ -102,6 +104,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             GameObject bullet =  objectPooler.SpawnFromPool("playerBullet", gunPoint.position, gunPoint.rotation);
+            AudioManager.PlaySound(shootSound, soundVolume);
             Rigidbody2D rb2D = bullet.GetComponent<Rigidbody2D>();
             rb2D.AddForce(gunPoint.up * bulletForce, ForceMode2D.Impulse);
         }

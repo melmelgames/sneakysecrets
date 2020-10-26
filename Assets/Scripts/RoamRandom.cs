@@ -63,7 +63,6 @@ public class RoamRandom : MonoBehaviour
 
         if (collision.gameObject.tag == "wall")
         {
-            Debug.Log("Boundary!");
             targetPos = new Vector2(0f, 0f);
         }
     }

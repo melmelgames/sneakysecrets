@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Destructable : MonoBehaviour
 {
+
     private ObjectPooler objectPooler;
 
     private PlayerController playerController;

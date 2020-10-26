@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        playerController = GetComponent<PlayerController>();
+        playerController = PlayerController.instance;
         PauseGameTutorial();
     }
 
@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.P) && gameOn)
         {
-            Debug.Log("pause");
             if (isPaused)
             {
                 ResumeGame();
@@ -80,6 +79,11 @@ public class GameManager : MonoBehaviour
         gameOver = false;
         isPaused = false;
         PauseWindow.HidePauseWindowStatic();
+    }
+
+    public void ResumeGameTutorial()
+    {
+        Time.timeScale = 1.0f;
     }
 
     public static void ResumeGameStatic()

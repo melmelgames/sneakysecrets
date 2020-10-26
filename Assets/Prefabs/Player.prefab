@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   gunPoint: {fileID: 8066795907081839170}
+  shootSound: {fileID: 0}
   score: 0
   enemiesKilled: 0
   moveSpeed: 5
@@ -184,6 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aa25943d5fbd9c47b0cfc6284e6d4b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionSound: {fileID: 8300000, guid: f05c72464e9d463499a4b9ed2f36aae0, type: 3}
   health: 100
 --- !u!1 &8066795907081839171
 GameObject:

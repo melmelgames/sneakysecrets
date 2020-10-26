@@ -9,6 +9,7 @@ TagManager:
   - computer
   - enemy
   - waypoint
+  - box
   layers:
   - Default
   - TransparentFX
